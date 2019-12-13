@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnReto1.setOnClickListener { abrirReto(it) }
+        btnReto2.setOnClickListener { abrirReto(it) }
+        btnReto3.setOnClickListener { abrirReto(it) }
+        btnReto4.setOnClickListener { abrirReto(it) }
 
         btnGithub.setOnClickListener { browse("https://github.com/fsancheztemprano/PMDM_4_Retos") }
     }
@@ -32,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     private fun abrirReto(it: View?) {
         val intent: Intent?
         val request: Int
+        Log.d("${it?.id} / ", "${R.id.btnReto2}")
+
         when (it?.id) {
             R.id.btnReto1 -> {
                 intent = Intent(this, Reto1Activity::class.java)
